@@ -14,6 +14,8 @@ class MyTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height= MediaQuery.of(context).size.height;
     return Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
@@ -35,7 +37,7 @@ class MyTextfield extends StatelessWidget {
                   hintStyle: TextStyle(color: Colors.grey[500]) ,
                 ),
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: width * 0.03,
                 ),
               ),
             );

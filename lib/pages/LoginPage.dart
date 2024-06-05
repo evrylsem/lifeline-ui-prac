@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qwerty/components/MyButton.dart';
 import 'package:qwerty/components/MyTextfield.dart';
+import 'package:qwerty/pages/RegisterPage.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -15,6 +16,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height= MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(191, 27, 27, 1),
       body: SafeArea(
@@ -22,24 +25,19 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [ 
-            // const SizedBox(height: 20,),
             //logo
             Image.asset(
               'lib/images/white-logotext.png',
-              height: 100,
+              height: height * 0.12,
               ),
-            // const Icon(
-            //   Icons.lock,
-            //   size: 100,
-            // ),
-            const SizedBox(height: 70,),
+            SizedBox(height: height * 0.1),
             //contact num text field
             MyTextfield(
               controller: contactController,
               hintText: 'Contact Number',
               obscureText: false,
             ),
-            const SizedBox(height: 25,),
+            SizedBox(height: height * 0.02),
             //password text field
             MyTextfield(
               controller: passController,
@@ -48,7 +46,7 @@ class LoginPage extends StatelessWidget {
             ),
 
             //forgot password
-            const SizedBox(height: 10,),
+            SizedBox(height: height * 0.01),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: Row(
@@ -65,7 +63,7 @@ class LoginPage extends StatelessWidget {
             ),
 
             //login button
-            const SizedBox(height: 54,),
+            SizedBox(height: height * 0.05),
             MyButton(
               onTap: loginUser,
               textButton: 'Login',
@@ -73,7 +71,7 @@ class LoginPage extends StatelessWidget {
               textColor: Color.fromRGBO(88, 83, 83, 1),
             ),
             
-            const SizedBox(height: 30,),
+            SizedBox(height: height * 0.04),
             //dont have an acc? sign up
             Column(
               children: [
@@ -81,19 +79,28 @@ class LoginPage extends StatelessWidget {
                   'Dont have an account?',
                   style: TextStyle(
                     color: Color.fromRGBO(255, 255, 255, 1),
-                    fontSize: 15,
+                    fontSize: width * 0.035,
                     fontStyle: FontStyle.italic,
                   ),
                   ),
-                const SizedBox(height: 10,),
-                Text(
-                  'Sign-up here',
-                  style: TextStyle(
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  ),
+                SizedBox(height: height * 0.01),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (context) => RegisterPage())
+                  );
+                  },
+                  child: Text(
+                    'Sign-up here',
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontSize: width * 0.035,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    
+                    ),
+                ),
               ],
             ),
             //sign-up button

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qwerty/components/MyButton.dart';
 import 'package:qwerty/components/MyTextfield.dart';
+import 'package:qwerty/pages/LoginPage.dart';
 
 class RegisterPage extends StatelessWidget {
   RegisterPage({super.key});
@@ -18,50 +19,58 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height= MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromRGBO(235, 235, 235, 1),
       appBar: AppBar(
+        toolbarHeight: height * 0.06,
         centerTitle: true,
         title: Text('SIGN-UP'),
         backgroundColor: Color.fromRGBO(255, 255, 255, 1),
         elevation: 3,
         shadowColor: Color.fromRGBO(88, 83, 83, 0.5),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()),
+            );
+          },
           icon: Image.asset(
-            'lib/images/back-red.png',
-            height: 100,
+            'lib/images/back-red-nobg.png',
+            height: height * 0.02,
           )),
         ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           //First Name
-          const SizedBox(height: 25,),
+          SizedBox(height: height * 0.05),
           inputTextfield('First Name:', firstController, 'First Name'),
 
           //Last Name
-          const SizedBox(height: 10,),
+          SizedBox(height: height * 0.01),
           inputTextfield('Last Name:', lastController, 'Last Name'),
 
           //E-mail
-          const SizedBox(height: 10,),
+          SizedBox(height: height * 0.01),
           inputTextfield('Email Address:', emailController, 'Email Address'),
 
           //Contact
-          const SizedBox(height: 10,),
+          SizedBox(height: height * 0.01),
           inputTextfield('Contact Number:', contactController, 'Contact Number'),
 
           //Password
-          const SizedBox(height: 10,),
+          SizedBox(height: height * 0.01),
           inputTextfield('Password:', passController, 'Password', obscureText: true),
 
           //confirm
-          const SizedBox(height: 10,),
+          SizedBox(height: height * 0.01),
           inputTextfield('Confirm Password:', conpassController, 'Cofirm Password', obscureText: true),
 
           //reg button
-          const SizedBox(height: 35,),
+          SizedBox(height: height * 0.04),
           MyButton(
             onTap: registerUser,
             textButton: 'Register',
@@ -70,14 +79,35 @@ class RegisterPage extends StatelessWidget {
             ),
 
           //alr
-          const SizedBox(height: 25,),
-          Text('Already have an account?'),
+          SizedBox(height: height * 0.04),
           Text(
-            'Login',
+            'Already have an account?',
             style: TextStyle(
-              color: Color.fromRGBO(191, 27, 27, 1),
-              fontWeight: FontWeight.bold,
+              fontSize: width * 0.035,
             ),
+            ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => LoginPage())
+            );
+            },
+            child: Text(
+              'Login',
+              style: TextStyle(
+                color: Color.fromRGBO(191, 27, 27, 1),
+                fontWeight: FontWeight.bold,
+                fontSize: width * 0.035,
+              ),
+            ),
+          ),
+
+          //logo
+          SizedBox(height: height * 0.04),
+          Image.asset(
+            'lib/images/logo.png',
+            height: height * 0.07,
           ),
         ],
       ),

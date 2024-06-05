@@ -16,6 +16,8 @@ class MyButton extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height= MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -32,7 +34,7 @@ class MyButton extends StatelessWidget {
             style: TextStyle(
               color: textColor,
               fontWeight: FontWeight.bold,
-              fontSize: 18,
+              fontSize: width * 0.037,
             ),
           )
         ),
