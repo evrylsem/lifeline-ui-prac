@@ -25,13 +25,17 @@ class MyTextfield extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey)
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(10),
                   ),
                   filled: true,
                   fillColor: Color.fromRGBO(255, 255, 255, 1),
                   focusColor: Color.fromRGBO(255, 255, 255, 1),
                   hintText: hintText,
                   hintStyle: TextStyle(color: Colors.grey[500]) ,
+                ),
+                style: TextStyle(
+                  fontSize: 13,
                 ),
               ),
             );

@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
             //   Icons.lock,
             //   size: 100,
             // ),
-            const SizedBox(height: 120,),
+            const SizedBox(height: 70,),
             //contact num text field
             MyTextfield(
               controller: contactController,
@@ -68,10 +68,13 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 54,),
             MyButton(
               onTap: loginUser,
+              textButton: 'Login',
+              bgColor: Color.fromRGBO(255, 255, 255, 1),
+              textColor: Color.fromRGBO(88, 83, 83, 1),
             ),
             
             const SizedBox(height: 30,),
-            //dont have an acc?
+            //dont have an acc? sign up
             Column(
               children: [
                 Text(
@@ -92,9 +95,16 @@ class LoginPage extends StatelessWidget {
                   ),
                   ),
               ],
-            )
+            ),
             //sign-up button
-          
+            // const SizedBox(height: 75,),
+            // Text(
+            //   'est. since 2023',
+            //   style: TextStyle(
+            //     fontSize: 13,
+            //     color: Color.fromRGBO(255, 255, 255, 1),
+            //   ),
+            //   )
           
           
           ],),
