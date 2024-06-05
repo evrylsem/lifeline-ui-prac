@@ -48,12 +48,12 @@ class LoginPage extends StatelessWidget {
             //forgot password
             SizedBox(height: height * 0.01),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              padding: EdgeInsets.symmetric(horizontal: height * 0.05),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    'Forgot Password',
+                    'Forgot Password?',
                     style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1)
                     ),
@@ -63,7 +63,7 @@ class LoginPage extends StatelessWidget {
             ),
 
             //login button
-            SizedBox(height: height * 0.05),
+            SizedBox(height: height * 0.04),
             MyButton(
               onTap: loginUser,
               textButton: 'Login',
@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
               textColor: Color.fromRGBO(88, 83, 83, 1),
             ),
             
-            SizedBox(height: height * 0.04),
+            SizedBox(height: height * 0.03),
             //dont have an acc? sign up
             Column(
               children: [

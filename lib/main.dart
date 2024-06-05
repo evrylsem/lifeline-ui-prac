@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qwerty/pages/RegisterPage.dart';
 import 'pages/LoginPage.dart';
 
 void main() {

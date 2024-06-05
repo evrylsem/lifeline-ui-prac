@@ -17,18 +17,18 @@ class MyTextfield extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height= MediaQuery.of(context).size.height;
     return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
+              padding: EdgeInsets.symmetric(horizontal: height * 0.045),
               child: TextField(
                 controller: controller,
                 obscureText: obscureText,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(height * 0.011),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(height * 0.011),
                   ),
                   filled: true,
                   fillColor: Color.fromRGBO(255, 255, 255, 1),
